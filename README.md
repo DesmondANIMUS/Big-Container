@@ -1,9 +1,6 @@
 # Big-Container
 A docker image that includes: ubuntu, java, pig, mysqlserver, maven, git &amp; vim. All useful tools &amp; some instructions to get started with a big data project, the image'll spin up a container vm that'll require little to no configuration so that you can focus more on your real work
 
-# Container is live here:
-https://hub.docker.com/r/desmondanimus/big-data-env/
-
 # How to use:
 1. Start the mysql server service using: <br/>
 -- service mysql start <br/>
@@ -15,3 +12,6 @@ https://hub.docker.com/r/desmondanimus/big-data-env/
 -- git <br />
 3. Find/cd into directory: /home/project/ <br/>
 4. Download/clone your program(using git) & have fun playing with Big Data
+
+# Docker Image is live here:
+https://hub.docker.com/r/desmondanimus/big-data-env/
