@@ -1,8 +1,12 @@
 FROM dostiharise/ubuntu-java-mysql
 LABEL Gaurav Gogia <desmondmiles36@gmail.com>
 
+# Making some important directories
 RUN \
-    mkdir /home/project
+    mkdir /home/project    
+
+RUN \
+    mkdir /pig/
 
 # Install vim & git
 RUN \
@@ -16,22 +20,24 @@ ADD https://www-us.apache.org/dist/pig/pig-0.16.0/pig-0.16.0.tar.gz /pig/
 
 # Untar pig
 RUN \
- tar -xzf /pig/pig-0.16.0.tar.gz /pig/
+ tar -xzf /pig/pig-0.16.0.tar.gz
+
+RUN \
+    rm -rf /pig/pig-0.16.0.tar.gz
+
+RUN \
+    mv pig-0.16.0 /pig/
 
 # Set env for pig
 ENV PIG_HOME /pig/pig-0.16.0
+ENV PATH $PATH:/pig/pig-0.16.0/bin
 
 #------------------------------------------------------------------------#
-# Don't forget to update bashrc file by appending following two lines 
-# export PIG_HOME=/pig/pig-0.16.0
-# export PATH=$PATH:/pig/pig-0.16.0/bin
-# Open bashrc using: vim ~/.bashrc
 
-# Restart container
-
+# How to use:
 # Start mysql service using:
 # service mysql start
 
-# Test that pig, java, mysql, vim & git commands are working
+# Test that pig, java, mysql, vim & git commands & make sure that they are working
 # Find/cd into directory: /home/project/
-# Download/code your program & have fun playing with Big Data
+# Download/clone your program & have fun playing with Big Data
