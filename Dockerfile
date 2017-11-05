@@ -33,7 +33,6 @@ ENV PIG_HOME /pig/pig-0.16.0
 ENV PATH $PATH:/pig/pig-0.16.0/bin
 
 #------------------------------------------------------------------------#
-
 # How to use:
 # Start mysql service using:
 # service mysql start
